@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    font-family: "Karla", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: hsl(148, 38%, 91%);
+    padding-block: 5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    min-height: 42rem;
+    padding: 2rem;
+    border-radius: .8rem;
+    min-width: 35rem;
+}
+
+.title {
+    margin-bottom: 1.2rem;
+    color: hsl(187, 24%, 22%);
+}
+
+fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    flex-basis: 0;
+    row-gap: 1rem;
+}
+
+.double-input-container {
+    display: flex;
+    gap: .8rem;
+    flex-wrap: wrap;
+}
+
+.double-input-container > div {
+    flex-grow: 1;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+
+.input-container input, .query-input-container {
+    height: 2.4rem;
+    border-radius: .3rem;
+    border: solid .5px hsl(187, 24%, 22%);
+}
+
+input[type="text"], input[type="email"], #message {
+    padding-inline: .8rem;
+    font-size: 1rem;
+}
+
+input:hover, input:focus, #message:hover, #message:focus {
+    border: 1.5px solid hsl(169, 82%, 27%);
+    outline: none;
+}
+
+label, legend {
+    color: hsl(187, 24%, 22%);
+    font-weight: 500;
+}
+
+span {
+    color: hsl(169, 82%, 27%);
+}
+
+.error-msg {
+    font-weight: 400;
+    color: hsl(0, 66%, 54%);
+    display: none;
+}
+
+.query-type-div {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.query-input-container {
+    display: flex;
+    align-items: center;
+    padding-inline: 1rem;
+    gap: 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.query-input-container:active {
+    background-color: hsl(148, 38%, 91%);
+}
+
+.query-input-container label {
+    cursor: pointer;
+}
+
+.query-input-container > input {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1.8px solid hsl(187, 24%, 22%);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.query-input-container > input::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 19px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: hsl(169, 82%, 27%);
+    visibility: hidden;
+}
+
+.query-input-container > input:checked {
+    background-color: transparent;
+    border-color: hsl(169, 82%, 27%);
+}
+
+.query-input-container > input:checked::after {
+    visibility: visible;
+}
+
+#message {
+    height: 8rem;
+    border-radius: .3rem;
+    border: 1px solid hsl(187, 24%, 22%);
+    padding-top: .5rem;
+    resize: none;
+}
+
+#consent {
+    margin-right: 1rem;
+    display: none;
+}
+
+#consent:hover, #consent:focus {
+    border: none;
+}
+
+.consent-div label {
+    display: flex;
+    align-items: center;
+}
+
+.consent-div label::before {
+    content: '\2713';
+    display: inline-block;
+    font-weight: 600;
+    font-size: .7rem;
+    margin-right: 1rem;
+    border: 1.5px solid hsl(187, 24%, 22%);
+    min-width: 14px;
+    height: 14px;
+    line-height: 15px;
+    border-radius: 2px;
+    text-align: center;
+    color: #fff;
+}
+
+#consent:checked + label::before {
+    background-color: hsl(169, 82%, 27%);
+    border: none;
+}
+
+.form-btn {
+    background-color: hsl(169, 82%, 27%);
+    border: none;
+    padding-block: .8rem;
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 600;
+    border-radius: .4rem;
+    cursor: pointer;
+}
+
+.form-btn:hover {
+    background-color: hsl(187, 24%, 22%);
+}
+
+.success-msg {
+    color: #fff;
+    width: 20%;
+    min-height: 5.5rem;
+    background-color: hsl(187, 24%, 22%);
+    border-radius: 5px;
+    padding: 1rem;
+    position: absolute;
+    top: -10rem;
+    transition: top .5s ease-in-out;
+}
+
+.success-msg-display {
+    top: 1rem;
+}
+
+.success-msg div {
+    display: flex; 
+    align-items: center; 
+    gap: .5rem; 
+    margin-bottom: 1rem;
+}
+
+.success-msg p {
+    font-size: .85rem;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 650px) {
+    body {
+        padding-block: 0;
+        padding-inline: 6vw;
+    }
+
+    .form {
+        min-width: 0;
+    }
+
+    .success-msg {
+        width: 70%;
+        top: -7rem;
+    }
+
+    .success-msg-display {
+        top: 1rem;
+    }
+}

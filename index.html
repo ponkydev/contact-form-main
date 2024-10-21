@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Contact form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/2d2d2fe23c.js" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+
+  <!-- Form -->
+  <form class="form" id="form">
+
+    <h1 class="title">Contact Us</h1>
+
+    <fieldset>
+
+      <!--Name and Lastname-->
+      <div class="double-input-container">
+        <div class="input-container">    
+          <label for="firstName" class="input-label">First Name <span>*</span></label>
+          <input id="firstName" type="text" name="first name">
+          <h5 class="error-msg error-msg-name">This field is required</h5>
+        </div>
+        <div class="input-container">
+          <label for="lastName" class="input-label">Last Name <span>*</span></label>
+          <input id="lastName" type="text" name="last name">
+          <h5 class="error-msg error-msg-last-name">This field is required</h5>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="input-container">
+        <label for="email" class="input-label">Email Address <span>*</span></label>
+        <input id="email" type="email" name="email">
+        <h5 class="error-msg error-msg-email">Please enter a valid email address</h5>
+      </div>
+
+      <!-- Query -->
+      <div class="query-type-div">
+        <legend>Query Type <span>*</span></legend>
+        <div class="double-input-container query-selector">
+          <div id="general-enquiry-container" class="query-input-container">
+            <input id="generalEnquiry" type="radio" value="general-enquiry" name="query-type">
+            <label for="generalEnquiry">General Enquiry</label>
+          </div>
+          <div id="support-request-container" class="query-input-container">
+            <input id="supportRequest" type="radio" value="support-request" name="query-type">
+            <label for="supportRequest">Support Request</label>
+          </div>
+        </div>
+        <h5 class="error-msg error-msg-query">Please select a query type</h5>
+      </div>
+
+      <!-- Message -->
+      <div class="input-container message">
+        <label for="message">Message <span>*</span></label>
+        <textarea name="message" id="message"></textarea>
+        <h5 class="error-msg error-msg-message">This field is required</h5>
+      </div>
+
+      <!-- Consent -->
+      <div class="consent-div">
+        <input id="consent" type="checkbox" value="consent">
+        <label for="consent">I consent to being contacted by the team <span>*</span></label>  
+        <h5 class="error-msg error-msg-consent">To submit this form, please consent to being contacted</h5>
+      </div>
+
+      <!-- Submit Button -->
+      <button id="formBtn" class="form-btn" type="submit">Submit</button>
+
+    </fieldset>
+  </form>
+
+  <div class="success-msg">
+    <div>
+      <i class="fa-regular fa-circle-check"></i>
+      <h4 class="message-sent">Message Sent!</h4>
+    </div>
+    <p>Thanks for completing the form. We'll be in touch soon!</p>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
